@@ -1,0 +1,210 @@
+:root{
+    --webpage-sand:#D4CAAF;
+    --webpage-green:#a9c57f;
+    --webpage-dark: #221313;
+    --yoga-blue: #2596be;
+    --yoga-cloud-grey: #a0b2b5;
+    --yoga-green:#6d7e66;
+    --yoga-dark-blue:#577f83;
+    --yoga-grey:#8a847c;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family:'Playwrite Au SA','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+footer{
+    color: rgb(81, 68, 50);
+    display: flex;
+    flex-direction: row;
+    padding: 3rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h2{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 2.5rem;
+}
+
+a{
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}
+
+.main-container{
+    color: var(--webpage-green);
+    background-color: var(--yoga-green);
+}
+
+
+
+header, footer{
+    background-color: var(--yoga-grey);
+}
+
+header{
+    background:linear-gradient(355deg ,var(--yoga-green)50%,var(--yoga-grey) 50%);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.about-me-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me-box{
+    background-color: var(--yoga-dark-blue);
+    width: 35vw;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+
+.about-me-img-container{
+    position: relative;
+}
+
+.img-desc{
+    position: absolute;
+    font-weight: 600;
+    font-size: 3.5vw;
+    left:  20% ;  
+    bottom: 20px; 
+}
+
+.about-me-img{
+    width: 30vw;
+    height: auto;
+}
+
+.yoga-asanas{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.yoga-asanas h3, .asana-name{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.asana-name{
+    font-size: 1.4rem;
+    text-align: center;
+}
+.yoga-asanas-container{
+    margin: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
+    justify-content: center;
+    gap: 10px;
+}
+
+.asana-image{
+    /*
+    width: 300px;
+    height: auto;
+    */
+    width: 100%;
+    height: auto  ;
+    padding: 0;
+    }
+
+.asana-header{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    text-align: center;
+}
+
+
+.asana > p {
+    font-size: small;
+    padding: 2rem;
+
+}
+
+
+.asana{
+    border: 3.5px solid var(--webpage-dark);
+    border-radius: 10px;
+    margin: 0;
+    text-align: center;
+    background-color: var(--yoga-dark-blue  );
+}
+    
+
+
+
+.phone-logo{
+    width: 24px;
+}
+
+.contact-img{
+    width: 40vw;
+    height: auto;
+    
+}
+
+@media (max-width:1000px) {
+    .about-me-img{
+        float: left;
+        margin: 0.8rem;
+        
+    }
+
+    .about-me-container{
+        display: inline;
+        
+    }.about-me-box{
+        margin: 2.5rem;
+        width: 45vw;
+
+    }
+    
+    .img-desc{
+        font-size: 3.5vw;
+        left: 15%;
+        top: 31vw;
+    }
+    
+}
+
+@media  (max-width: 800px) {
+    footer{
+        flex-direction: column;
+        padding: 0;
+    }
+    .about-me-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .about-me-img{
+        width: 90vw;
+        padding: 0;
+    }
+    .contact-img{
+        width: 100%;
+        padding: 0;
+    }
+  
+    .about-me-box{
+        width: 85vw;
+    }
+
+    .img-desc{
+        font-size: 10vw;
+        left: 25%;  
+        top: 93vw;
+    }
+    
+}
