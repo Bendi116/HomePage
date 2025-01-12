@@ -3,27 +3,43 @@
     --webpage-green:#a9c57f;
     --webpage-dark: #221313;
     --yoga-blue: #2596be;
-    --yoga-cloud-grey: #a0b2b5;
     --yoga-green:#6d7e66;
     --yoga-dark-blue:#577f83;
     --yoga-grey:#8a847c;
+    --yoga-cloud:#9dabab;
 }
 
 body{
+    width: 100vw;
     padding: 0;
-    margin: 0;
+    margin: 0 ;
     border: 0;
     font-family:'Playwrite Au SA','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 
 footer{
-    color: rgb(81, 68, 50);
+    color: var(--webpage-dark);
     display: flex;
     flex-direction: row;
     padding: 3rem;
     justify-content: space-around;
     align-items: center;
+    font-size: 1.6rem;
+    animation: footer-appear ease-out;
+    animation-timeline: view();
+    animation-range: entry 0%;
+    
+}
+@keyframes footer-appear{
+    from{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 h2{
@@ -39,6 +55,7 @@ a{
 }
 
 .main-container{
+    cursor: var(--webpage-dark);
     color: var(--webpage-green);
     background-color: var(--yoga-green);
 }
@@ -47,10 +64,13 @@ a{
 
 header, footer{
     background-color: var(--yoga-grey);
+    
 }
 
+
+
 header{
-    background:linear-gradient(355deg ,var(--yoga-green)50%,var(--yoga-grey) 50%);
+    background:linear-gradient(355deg ,var(--yoga-green),var(--yoga-cloud) );
     display: flex;
     justify-content: center;
     padding: 2rem;
@@ -110,40 +130,55 @@ header{
 }
 
 .asana-image{
-    /*
-    width: 300px;
-    height: auto;
-    */
     width: 100%;
-    height: auto  ;
-    padding: 0;
+    height: auto;
+    border-radius: 20px;
     }
 
-.asana-header{
-    display: flex;
-    flex-direction: row;
-    justify-content:center;
-    text-align: center;
-}
-
-
 .asana > p {
-    font-size: small;
+    font-size: 1rem;
     padding: 2rem;
 
 }
 
-
 .asana{
     border: 3.5px solid var(--webpage-dark);
-    border-radius: 10px;
+    border-radius: 24px;
     margin: 0;
     text-align: center;
-    background-color: var(--yoga-dark-blue  );
+    background-color: var(--yoga-dark-blue );
+
+    animation: appear  ease-in ;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+    transform-origin: -4rem;
 }
+
+@keyframes appear {
+    from{
+        opacity: 0;
+        transform: scale(0.5,0.5);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1,1);
+    }
     
+}
+
+.asana:hover{
+    border: 4.5px solid var(--webpage-green);
+    box-shadow: 0.5vw 1vw rgb(28, 39, 25);
+    transition: transform 0.6s ease-in;
+    transform: translate(0%,-5%);
+}
 
 
+
+.contact-infos > h3{
+    font-size: 3.2rem;
+    font-weight: 1000;
+}
 
 .phone-logo{
     width: 24px;
@@ -155,7 +190,7 @@ header{
     
 }
 
-@media (max-width:1000px) {
+@media (max-width:1024px) {
     .about-me-img{
         float: left;
         margin: 0.8rem;
@@ -165,10 +200,10 @@ header{
     .about-me-container{
         display: inline;
         
-    }.about-me-box{
+    }
+    .about-me-box{
         margin: 2.5rem;
         width: 45vw;
-
     }
     
     .img-desc{
@@ -183,28 +218,42 @@ header{
     footer{
         flex-direction: column;
         padding: 0;
+        font-size: 1rem;
     }
+
     .about-me-container{
         display: flex;
         flex-direction: column;
+        width: 100%;
+    }
+    .contact-infos > h3{
+        font-size: 1.7rem;
     }
     .about-me-img{
         width: 90vw;
         padding: 0;
     }
     .contact-img{
+        display: block;
         width: 100%;
-        padding: 0;
+    }
+ 
+    .contact-infos{
+        margin-bottom: 2.5rem;
     }
   
     .about-me-box{
         width: 85vw;
+        font-size: 1.2rem;
     }
 
     .img-desc{
         font-size: 10vw;
         left: 25%;  
         top: 93vw;
+    }
+    .yoga-asanas-container{
+        margin: 1rem;
     }
     
 }
